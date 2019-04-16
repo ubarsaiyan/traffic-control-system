@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
@@ -9,11 +9,11 @@ import { TooltipComponent } from '@angular/material';
 @Injectable()
 export class AuthService {
 
-  constructor(private http : HttpClient, private token: TokenStorage) {}
+  constructor(private http: HttpClient, private token: TokenStorage) {}
 
   public $userSource = new Subject<any>();
 
-  login(email : string, password : string) : Observable <any> {
+  login(email: string, password: string): Observable <any> {
     return Observable.create(observer => {
       this.http.post('/api/auth/login', {
         email,
@@ -23,7 +23,7 @@ export class AuthService {
           this.setUser(data.user);
           this.token.saveToken(data.token);
           observer.complete();
-      })
+      });
     });
   }
 
