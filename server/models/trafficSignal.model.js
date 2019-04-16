@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const trafficSignal = new mongoose.Schema({
+const TrafficSignalSchema = new mongoose.Schema({
   trafficLightId: {
     type: String,
     required: true,
@@ -11,10 +11,8 @@ const trafficSignal = new mongoose.Schema({
     required: true,
     unique:true
   },
-},
-  {
+}, {
   versionKey: false
 });
 
-
-module.exports = mongoose.model('trafficSignal', trafficSignal);
+module.exports = mongoose.model('TrafficSignal', TrafficSignalSchema);

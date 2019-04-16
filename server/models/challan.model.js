@@ -1,43 +1,33 @@
 const mongoose = require('mongoose');
 
-const challan = new mongoose.Schema ({
-ChallanId:{
- type: String,
+const ChallanSchema = new mongoose.Schema ({
+  challanId:{
+    type: String,
     required: true,
     unique: true
-},
-   officeId: {
+  },
+  officeId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'policeOfficer'
-},
-licenceId: {
-	type: mongoose.Schema.Types.ObjectId,
-    ref: 'licence'
-},
-
-fineAmount: {
+    ref: 'PoliceOfficer'
+  },
+  licenceId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Licence'
+  },
+  fineAmount: {
     type: Number,
     required: true,
-  unique: true
+    unique: true
   },
-
-registrationNumber: {
+  registrationNumber: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'vehicle'
-},
+    ref: 'Vehicle'
+  },
+  offences: [{
+    type: String
+  }]
+}, {
+  versionKey: false
+});
 
-offences: [{type: String}]
-
-
-},
-
-{
-versionKey: false
-}
-);
-
-
-
-module.exports = mongoose.model('challan', challan);
-
-
+module.exports = mongoose.model('Challan', ChallanSchema);

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const vehicle = new mongoose.Schema({
+
+const VehicleSchema = new mongoose.Schema({
   registrationNumber: {
     type: String,
     required: true,
@@ -22,7 +23,7 @@ const vehicle = new mongoose.Schema({
     type: String,
     required: true,
   },
-chassisNumber: {
+  chassisNumber: {
     type: String,
     required: true,
     unique: true
@@ -40,14 +41,13 @@ chassisNumber: {
     type: String,
     required: true,
   },
-    RTOId: {
+  RTOId: {
     type: mongoose.Schema.Types.ObjectId, ref:'RTO',
-      required:true,
+    required:true,
     unique:true
   },
-}
-, {
+}, {
   versionKey: false
 });
 
-module.exports = mongoose.model('vehicle', vehicle);
+module.exports = mongoose.model('Vehicle', VehicleSchema);

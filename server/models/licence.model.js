@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const licence = new mongoose.Schema({
+const LicenceSchema = new mongoose.Schema({
   licenceId: {
     type: String,
     required: true,
@@ -10,9 +10,11 @@ const licence = new mongoose.Schema({
     type: String,
     required: true
   },
-authorization: [{type: String, enum :['MCWOG','LMV-NT','MGV','LMV','HMV','HGMV','HPMV']}],
-
- dateOfBirth: {
+  authorization: [{
+    type: String,
+    enum : ['MCWOG','LMV-NT','MGV','LMV','HMV','HGMV','HPMV']
+  }],
+  dateOfBirth: {
     type: Date,
     required: true,
   },
@@ -29,15 +31,13 @@ authorization: [{type: String, enum :['MCWOG','LMV-NT','MGV','LMV','HMV','HGMV',
     type: String,
     required: true,
   },
-    bloodGroup: {
+  bloodGroup: {
     type: String,
     required: true,
     enum: ['A+', 'B+','AB+','O+','A-', 'B-', 'AB-', 'O-',],
   },
-},
- {
+}, {
   versionKey: false
 });
 
-
-module.exports = mongoose.model('licence', licence);
+module.exports = mongoose.model('Licence', LicenceSchema);

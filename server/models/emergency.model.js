@@ -1,27 +1,25 @@
 const mongoose = require('mongoose');
 
-const emergency  = new mongoose.Schema({
+const EmergencySchema  = new mongoose.Schema({
   streetId: {
     type: String,
     required: true,
-  unique: true
+    unique: true
   },
- typeOfEmergency:{
-	type: String,
-	required: true
+  typeOfEmergency:{
+	  type: String,
+	  required: true
 	},
-streetId: {
+  streetId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'street'
-},
-officerId: {
+    ref: 'Street'
+  },
+  officerId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'policeOfficer'
-},
-},
-{
+    ref: 'PoliceOfficer'
+  },
+}, {
 versionKey: false
-}
-);
+});
 
-module.exports = mongoose.model('emergency',emergency);
+module.exports = mongoose.model('Emergency', EmergencySchema);

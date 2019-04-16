@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const policeOfficer = new mongoose.Schema({
+const PoliceOfficerSchema = new mongoose.Schema({
   officerId: {
     type: String,
     required: true,
@@ -27,12 +27,10 @@ const policeOfficer = new mongoose.Schema({
   },
   stationId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'policeStation'
-},
-}, 
-  {
+    ref: 'PoliceStation'
+  },
+}, {
   versionKey: false
 });
 
-
-module.exports = mongoose.model('policeOfficer', policeOfficer);
+module.exports = mongoose.model('PoliceOfficer', PoliceOfficerSchema);
