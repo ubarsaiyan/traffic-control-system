@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 
 const EmergencySchema  = new mongoose.Schema({
-  streetId: {
-    type: String,
-    required: true,
-    unique: true
-  },
+ 
   typeOfEmergency:{
 	  type: String,
 	  required: true
