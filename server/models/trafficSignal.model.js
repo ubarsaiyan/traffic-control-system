@@ -15,4 +15,4 @@ const TrafficSignalSchema = new mongoose.Schema({
   versionKey: false
 });
 
-module.exports = mongoose.model('TrafficSignal', TrafficSignalSchema);
+module.exports = mongoose.model('trafficSignal', TrafficSignalSchema);
