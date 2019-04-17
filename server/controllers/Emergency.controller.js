@@ -12,7 +12,7 @@ module.exports = {
   insert
 }
 
-async function insert(Emergency) {
-  Emergency = await Joi.validate(Emergency, EmergencySchema, { abortEarly: false });
-   return await new Emergency(Emergency).save();
+async function insert(emergency) {
+  emergency = await Joi.validate(emergency, EmergencySchema, { abortEarly: false });
+   return await new Emergency(emergency).save();
 }
