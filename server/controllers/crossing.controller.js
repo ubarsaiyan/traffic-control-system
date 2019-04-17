@@ -14,6 +14,6 @@ module.exports = {
 }
 
 async function insert(street) {
-  street = await Joi.validate(crossing, CrossingSchema, { abortEarly: false });
+  crossing = await Joi.validate(crossing, CrossingSchema, { abortEarly: false });
   return await new Crossing(crossing).save();
 }
