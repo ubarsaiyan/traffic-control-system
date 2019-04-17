@@ -9,11 +9,11 @@ const VehicleSchema = new mongoose.Schema({
   registrationDate: {
     type: Date,
     required: true,
+    Default: Date.now
   },
   registeredUpto: {
     type: Date,
-    required: true,
-    Default: Date.now
+    required: true,  
   },
   manafacturingDate: {
     type: Date,
