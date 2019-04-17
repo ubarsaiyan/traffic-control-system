@@ -12,6 +12,6 @@ module.exports = {
 }
 
 async function insert(policeStation) {
-  policeStation = await Joi.validate(opliceStation, PoliceStation, { abortEarly: false });
+  policeStation = await Joi.validate(policeStation, PoliceStation, { abortEarly: false });
   return await new PoliceStation(policeStation).save();
 }
