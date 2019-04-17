@@ -20,5 +20,11 @@ module.exports = {
 
 async function insert(vehicle) {
   vehicle = await Joi.validate(vehicle, vehicleSchema, { abortEarly: false });
-  return await new Vehicle(vehicle).save();
+  return await new Vehicle(vehicle).save()
+    .then(vehicle => {
+      res.status(200).json({'vehicle': 'Added successfully'});
+    })
+    .catch(err => {
+      res.status(400).send('Failed to create new record');
+    });
 }

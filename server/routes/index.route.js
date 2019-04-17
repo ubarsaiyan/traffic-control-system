@@ -1,7 +1,8 @@
 const express = require('express');
 const userRoutes = require('./user.route');
 const authRoutes = require('./auth.route');
-const vehicleRoutes = require('./vehicle.route');
+
+const vehicleCtrl = require('../controllers/vehicle.controller');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
@@ -12,6 +13,13 @@ router.get('/health-check', (req, res) =>
 
 router.use('/auth', authRoutes);
 router.use('/user', userRoutes);
-router.use('/vehicle', vehicleRoutes);
+
+router.route('/vehicles')
+  .post(asyncHandler(addVehicle));
 
 module.exports = router;
+
+async function addVehicle(req, res) {
+  let vehicle = await vehicleCtrl.insert(req.body);
+  res.json(vehicle);
+}

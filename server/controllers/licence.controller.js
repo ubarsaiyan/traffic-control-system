@@ -10,7 +10,6 @@ const licenceSchema = Joi.object({
   expirationDate: Joi.date().required(),
   address: Joi.string().required(),
   bloodGroup: Joi.string().required().valid(['A+', 'B+','AB+','O+','A-', 'B-', 'AB-', 'O-',]),
-
 })
 
 module.exports = {

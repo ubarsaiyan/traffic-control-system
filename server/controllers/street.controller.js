@@ -13,6 +13,6 @@ module.exports = {
 }
 
 async function insert(street) {
-  street = await Joi.validate(street, StreetSchema, { abortEarly: false });
+  street = await Joi.validate(street, streetSchema, { abortEarly: false });
   return await new Street(street).save();
 }

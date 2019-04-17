@@ -1,7 +1,7 @@
 const Joi = require('joi');
 const PoliceOfficer = require('../models/policeOfficer.model');
 
-const PoliceOfficerSchema = Joi.object({
+const policeOfficerSchema = Joi.object({
 	officerID: Joi.string().required(),
 	age: Joi.number().min(18).max(65).required(),
 	name: Joi.string().required(),
@@ -15,6 +15,6 @@ module.exports = {
 }
 
 async function insert(policeOfficer) {
-  policeOfficer = await Joi.validate(policeOfficer, PoliceOfficerSchema, { abortEarly: false });
+  policeOfficer = await Joi.validate(policeOfficer, policeOfficerSchema, { abortEarly: false });
   return await new PoliceOfficer(policeOfficer).save();
 }

@@ -1,7 +1,7 @@
 const Joi = require('joi');
 const TrafficSignal = require('../models/trafficSignal.model');
 
-const TrafficSignalSchema = Joi.object({
+const trafficSignalSchema = Joi.object({
 	trafficLightID: Joi.string().required(),
 	crossingID: Joi.string().required()
 })
@@ -11,6 +11,6 @@ module.exports = {
 }
 
 async function insert(trafficSignal) {
-  trafficSignal = await Joi.validate(trafficSignal, TrafficSignalSchema, { abortEarly: false });
+  trafficSignal = await Joi.validate(trafficSignal, trafficSignalSchema, { abortEarly: false });
   return await new TrafficSignal(trafficSignal).save();
 }
