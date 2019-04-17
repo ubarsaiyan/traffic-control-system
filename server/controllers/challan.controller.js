@@ -5,9 +5,9 @@ const ChallanSchema  = Joi.object({
   challanId: Joi.string().required(),
   officerId: Joi.string().required(),
 licenceId:Joi.string().required(),
-fineAmount: number().required(),
- registrationNumber: string().required(),
-offences: string()
+fineAmount: Joi.number().required(),
+ registrationNumber: Joi.string().required(),
+offences: Joi.string()
 })
 
 
