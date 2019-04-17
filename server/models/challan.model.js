@@ -6,7 +6,7 @@ const ChallanSchema = new mongoose.Schema ({
     required: true,
     unique: true
   },
-  officeId: {
+  officerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'PoliceOfficer'
   },
