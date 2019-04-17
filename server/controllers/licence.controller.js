@@ -17,7 +17,7 @@ module.exports = {
   insert
 }
 
-async function insert(vehicle) {
+async function insert(licence) {
   licence = await Joi.validate(licence, licenceSchema, { abortEarly: false });
   return await new Licence(licence).save();
 }
