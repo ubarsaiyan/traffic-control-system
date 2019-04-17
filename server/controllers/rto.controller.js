@@ -11,7 +11,7 @@ module.exports = {
   insert
 }
 
-async function insert(vehicle) {
+async function insert(rto) {
   rto = await Joi.validate(rto, RTOSchema, { abortEarly: false });
   return await new Rto(rto).save();
 }
