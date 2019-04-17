@@ -8,7 +8,7 @@ const vehicleSchema = Joi.object({
   manafacturingDate: Joi.date().required(),
   ownerName: Joi.string().required(),
   chassisNumber: Joi.string().required(),
-  class: Joi.string().required(),
+  class: Joi.string().required().valid(['MCWOG','LMV-NT','MGV','LMV','HMV','HGMV','HPMV']),
   model: Joi.string().required(),
   manafacturer: Joi.string().required(),
   RTOId: Joi.string().required()
