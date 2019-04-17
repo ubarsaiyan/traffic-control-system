@@ -15,7 +15,7 @@ module.exports = {
   insert
 }
 
-async function insert(Challan) {
-  Challan = await Joi.validate(Challan, ChallanSchema, { abortEarly: false });
-  return await new Challan(Challan).save();
+async function insert(challan) {
+  challan = await Joi.validate(challan, ChallanSchema, { abortEarly: false });
+  return await new Challan(challan).save();
 }
