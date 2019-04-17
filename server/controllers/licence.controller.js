@@ -4,7 +4,7 @@ const Licence = require('../models/licence.model');
 const licenceSchema = Joi.object({
   licenceId: Joi.string().required(),
   name: Joi.string().required(),
-  autorization: Joi.array().required().valid(['MCWOG','LMV-NT','MGV','LMV','HMV','HGMV','HPMV']),
+  autorization: Joi.array().required().items(Joi.string().valid(['MCWOG','LMV-NT','MGV','LMV','HMV','HGMV','HPMV'])),
   dateofBirth: Joi.date().required(),
   dateofIssue: Joi.date().required(),
   expirationDate: Joi.date().required(),
