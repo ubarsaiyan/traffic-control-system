@@ -33,4 +33,4 @@ const PoliceOfficerSchema = new mongoose.Schema({
   versionKey: false
 });
 
-module.exports = mongoose.model('PoliceOfficer', PoliceOfficerSchema);
+module.exports = mongoose.model('policeOfficer', PoliceOfficerSchema);
