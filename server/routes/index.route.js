@@ -27,6 +27,7 @@ router.route('/vehicle')
   .post(asyncHandler(addVehicle));
 
 async function addVehicle(req, res) {
+  console.log(req, res);
   let vehicle = await vehicleCtrl.insert(req.body);
   res.json(vehicle);
 }
@@ -58,7 +59,7 @@ async function addStreet(req, res) {
 router.route('/crossing')
   .post(asyncHandler(addCrossing));
 
-async function addStreet(req, res) {
+async function addCrossing(req, res) {
   let crossing = await crossingCtrl.insert(req.body);
   res.json(crossing);
 }

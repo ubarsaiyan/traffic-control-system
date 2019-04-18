@@ -4,7 +4,7 @@ const Crossing = require('../models/crossing.model');
 const crossingSchema = Joi.object({
   crossingId: Joi.string().required(),
   crossingName: Joi.string().required(),
-  typeOfCrossing: Joi.number().integer.min(2).max(6).required(),
+  typeOfCrossing: Joi.number().integer().min(2).max(6).required(),
   connectingStreetId: Joi.string().required(),
   officerId: Joi.string().required()
 })

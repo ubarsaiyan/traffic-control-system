@@ -15,7 +15,7 @@ const VehicleSchema = new mongoose.Schema({
     type: Date,
     required: true,  
   },
-  manafacturingDate: {
+  manufacturingDate: {
     type: Date,
     required: true,
   },
@@ -37,7 +37,7 @@ const VehicleSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  manafacturer: {
+  manufacturer: {
     type: String,
     required: true,
   },

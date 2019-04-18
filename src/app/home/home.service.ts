@@ -7,12 +7,9 @@ export class HomeService {
 
   constructor(private http: HttpClient) {}
 
-  addVehicle(number: string, type: string): Observable <any> {
+  addVehicle(body: any): Observable <any> {
     return Observable.create(observer => {
-      this.http.post('/api/vehicle', {
-        number,
-        type
-      }).subscribe((data: any) => {
+      this.http.post('/api/vehicle', body).subscribe((data: any) => {
           observer.next({vehicle: data.vehicle});
           console.log('Vehicle added');
           observer.complete();

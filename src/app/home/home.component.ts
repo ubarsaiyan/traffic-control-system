@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from './home.service';
 import { Router } from '@angular/router';
+
+import { Vehicle } from '../models/vehicle.model';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -12,19 +14,20 @@ export class HomeComponent implements OnInit {
 
   constructor(private homeService: HomeService, private router: Router) { }
 
-  number: string;
-  type: string;
+  vehicles: Vehicle[];
+  displayedColumns = ['registrationNumber', 'registrationDate', 'registeredUpto',
+   'manufacturingDate', 'ownerName', 'chassisNumber', 'class', 'model', 'manufacturer', 'RTOId'];
 
   ngOnInit() {
   }
 
-  addVehicle() {
-    console.log('adding vehicle');
-    this.homeService.addVehicle(this.number, this.type)
-    .subscribe(data => {
-      console.log('done');
-      this.router.navigate(['']);
-    });
-  }
+  // addVehicle() {
+  //   console.log('adding vehicle');
+  //   this.homeService.addVehicle(this.number, this.type)
+  //   .subscribe(data => {
+  //     console.log('done');
+  //     this.router.navigate(['']);
+  //   });
+  // }
 
 }
