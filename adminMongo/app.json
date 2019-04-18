@@ -1,7 +1,7 @@
 {
-  "name": "adminMongo",
-  "description": "adminMongo is a Web based user interface (GUI) to handle all your MongoDB connections/databases needs.",
-  "repository": "https://github.com/mrvautin/adminMongo",
+  "name": "Traffic Control System",
+  "description": "Efficiently manage the traffic in an area with this MEAN stack based app",
+  "repository": "https://github.com/ubarsaiyan/traffic-control-system",
   "logo": "https://raw.githubusercontent.com/mrvautin/mrvautin.github.io/master/images/adminMongo/adminMongo-Logo.png",
-  "keywords": ["node", "express", "mongodb"]
+  "keywords": ["node", "express", "mongodb", "angular"]
 }
