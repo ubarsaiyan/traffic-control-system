@@ -12,7 +12,7 @@ import { HomeService } from './home.service';
 export class HomeComponent implements OnInit {
 
   schemas = ['challan', 'emergency', 'crossing', 'licence', 'policeOfficer',
-   'policeStation', 'rto', 'street', 'trafficSignal', 'crossing', 'vehicle'];
+   'policeStation', 'rto', 'street', 'trafficSignal', 'vehicle'];
 
   constructor(private homeService: HomeService, private router: Router) { }
 
