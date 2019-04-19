@@ -18,7 +18,7 @@ export class CreateComponent implements OnInit {
 
   challanFields = ['challanId', 'officerId', 'licenceId', 'fineAmount', 'registrationNumber', 'offences'];
   emergencyFields = ['streetId', 'officerId', 'typeOfEmergency'];
-  crossingFields = ['crossingId', 'crossingName', 'typesOfCrossing','connectingStreetId','officerId'];
+  crossingFields = ['crossingId', 'crossingName', 'typeOfCrossing', 'connectingStreetId', 'officerId'];
   licenceFields = ['licenceId', 'name', 'authorization', 'dateOfBirth', 'dateOfIssue', 'expirationDate', 'address', 'bloodGroup'];
   policeOfficerFields = ['officerId', 'age', 'name', 'rank', 'bloodGroup', 'stationId'];
   policeStationFields = ['policeStationId', 'address', 'policeStationName'];

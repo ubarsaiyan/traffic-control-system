@@ -17,6 +17,7 @@ module.exports = {
 }
 
 async function insert(licence) {
+  licence.authorization = licence.authorization.split(",");
   licence = await Joi.validate(licence, licenceSchema, { abortEarly: false });
   return await new Licence(licence).save();
 }

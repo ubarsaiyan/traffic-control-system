@@ -7,7 +7,7 @@ const challanSchema  = Joi.object({
   licenceId:Joi.string().required(),
   fineAmount: Joi.number().required(),
   registrationNumber: Joi.string().required(),
-  offences: Joi.string()
+  offences: Joi.array().items(Joi.string()),
 })
 
 module.exports = {
@@ -15,6 +15,7 @@ module.exports = {
 }
 
 async function insert(challan) {
+  challan.offences = challan.offences.split(",");
   challan = await Joi.validate(challan, challanSchema, { abortEarly: false });
   return await new Challan(challan).save();
 }

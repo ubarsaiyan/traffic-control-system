@@ -17,7 +17,6 @@ const ChallanSchema = new mongoose.Schema ({
   fineAmount: {
     type: Number,
     required: true,
-    unique: true
   },
   registrationNumber: {
     type: mongoose.Schema.Types.ObjectId,

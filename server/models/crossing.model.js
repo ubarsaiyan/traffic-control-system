@@ -9,9 +9,8 @@ const CrossingSchema = new mongoose.Schema({
   crossingName: {
     type: String,
     required: true,
-    unique: true,
   },
-  typesOfCrossing: {
+  typeOfCrossing: {
     type: Number,
     min: 2,
     max: 6,
@@ -21,12 +20,10 @@ const CrossingSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Street',
     required: true,
-    unique: true
   }],
   officerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'policeOfficer',
-    unique: true
   }
 }, {
   versionKey: false
