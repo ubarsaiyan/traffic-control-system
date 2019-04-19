@@ -8,7 +8,7 @@ const routes: Routes = [{
   path: '',
   component: HomeComponent
 }, {
-  path: 'create',
+  path: 'create/:schema',
   component: CreateComponent
 }, {
   path: 'auth',

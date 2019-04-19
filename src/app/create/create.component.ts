@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { HomeService } from '../home/home.service';
 
@@ -13,15 +13,23 @@ import { HomeService } from '../home/home.service';
 export class CreateComponent implements OnInit {
 
   createForm: FormGroup;
+  fields: string[];
 
-  fields = ['registrationNumber', 'registrationDate', 'registeredUpto',
+  vehicleFields = ['registrationNumber', 'registrationDate', 'registeredUpto',
    'manufacturingDate', 'ownerName', 'chassisNumber', 'class', 'model', 'manufacturer', 'RTOId'];
 
-  constructor(private homeService: HomeService, private fb: FormBuilder, private router: Router) {
+  constructor(private route: ActivatedRoute, private homeService: HomeService, private fb: FormBuilder, private router: Router) {
+    const schema = this.route.snapshot.paramMap.get('schema');
+    // console.log(schema);
+    if (schema === 'vehicle') {
+      this.fields = this.vehicleFields;
+    }
+    // console.log(this.fields);
     const fieldsJson = {};
     this.fields.forEach(e => {
       fieldsJson[e] = '';
     });
+    // console.log(fieldsJson);
     this.createForm = this.fb.group(fieldsJson);
   }
 
