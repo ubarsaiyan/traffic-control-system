@@ -17,15 +17,15 @@ const CrossingSchema = new mongoose.Schema({
     max: 6,
     required: true,
   },
-  connectingStreetId: {
+  connectingStreetId: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Street',
     required: true,
     unique: true
-  },
+  }],
   officerId: {
-    type: String,
-    required: true,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'policeOfficer',
     unique: true
   }
 }, {
