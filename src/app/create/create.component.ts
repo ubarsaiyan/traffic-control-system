@@ -23,7 +23,7 @@ export class CreateComponent implements OnInit {
   policeOfficerFields = ['officerId', 'age', 'name', 'rank', 'bloodGroup', 'stationId'];
   policeStationFields = ['policeStationId', 'address', 'policeStationName'];
   rtoFields = ['rtoCode', 'address', 'head'];
-  streetFields = ['streetId', 'streetName', 'numberofLanes', 'typeOfRoad'];
+  streetFields = ['streetId', 'streetName', 'numberOfLanes', 'typeOfRoad'];
   trafficSignalFields = ['trafficLightId', 'crossingId'];
   vehicleFields = ['registrationNumber', 'registrationDate', 'registeredUpto',
    'manufacturingDate', 'ownerName', 'chassisNumber', 'class', 'model', 'manufacturer', 'RTOId'];
