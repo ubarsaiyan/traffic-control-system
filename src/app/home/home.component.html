@@ -1,7 +1,7 @@
 <div>
   <br>
   <mat-card>
-    <button mat-raised-button color="primary" routerLink="/create/vehicle">Create New Vehicle</button>
+    <button mat-raised-button class="add-button" *ngFor="let schema of schemas" color="primary" routerLink="/create/{{schema}}">Create New {{schema}}</button>
     <br><br>
     <mat-divider></mat-divider>
     <br>
