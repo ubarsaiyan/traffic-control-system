@@ -9,6 +9,7 @@ const rtoCtrl = require('../controllers/rto.controller');
 const streetCtrl = require('../controllers/street.controller');
 const crossingCtrl = require('../controllers/crossing.controller');
 const trafficSignalCtrl = require('../controllers/trafficSignal.controller');
+const policeStationCtrl = require('../controllers/policeStation.controller');
 const policeOfficerCtrl = require('../controllers/policeOfficer.controller');
 const challanCtrl = require('../controllers/challan.controller');
 const emergencyCtrl = require('../controllers/emergency.controller');

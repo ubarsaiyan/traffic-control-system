@@ -4,7 +4,7 @@ const PoliceStation = require('../models/policeStation.model');
 const policeStationSchema = Joi.object({
   policeStationId: Joi.string().required(),
   address: Joi.string().required(),
-  policeStatonName: Joi.string().minlength(5).maxlength(100).required()
+  policeStationName: Joi.string().min(5).max(100).required()
 })
 
 module.exports = {
