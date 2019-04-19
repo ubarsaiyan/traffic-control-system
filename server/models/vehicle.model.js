@@ -44,7 +44,6 @@ const VehicleSchema = new mongoose.Schema({
   RTOId: {
     type: mongoose.Schema.Types.ObjectId, ref:'RTO',
     required:true,
-    unique:true
   },
 }, {
   versionKey: false
